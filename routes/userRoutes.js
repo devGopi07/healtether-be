@@ -8,12 +8,12 @@ const {
 } = require("../controllers/userController");
 const { roleCheck, validateToken } = require("../common/auth");
 
-router.get("/getUsers", validateToken, roleCheck("admin"), getUsers);
+router.get("/getUsers",  getUsers);
 
-router.post("/signUp", signUp);
+router.post("/signUp",  signUp);
 
 router.post("/signIn", signIn);
 
-router.delete("/deleteUser", validateToken, roleCheck("superAdmin"), deleteUser);
+router.delete("/deleteUser",  deleteUser);
 
 module.exports = router;
